@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import Department, Role, Employee
-
-class departmentAdmin(admin.ModelAdmin):
-    list_display = ['name']
+from .models import  Role, Employee
 
 
 class roleAdmin(admin.ModelAdmin):
@@ -10,10 +7,9 @@ class roleAdmin(admin.ModelAdmin):
 
 
 class employeeAdmin(admin.ModelAdmin):
-    list_display = ['name', 'email', 'phone', 'department', 'jobRole']
+    list_display = ['name', 'email', 'phone', 'jobRole']
 
 
 
-admin.site.register(Department, departmentAdmin)
 admin.site.register(Role, roleAdmin)
 admin.site.register(Employee, employeeAdmin)
