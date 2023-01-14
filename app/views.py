@@ -32,12 +32,13 @@ def employeeCreate(request):
 
     if not(hireDate > today):
         s = EmployeeSerializers(data=request.data)
-        print(f"hire condition {s}")
+        print(f"hire condition")
     else: 
         return Response("Only current date and past dates are allowed")
     if s.is_valid():
         s.save()
-        # print(f"valid condition {s}")
+        print("data saved")
+
     return Response(s.data)
 
 @api_view(['PUT'])

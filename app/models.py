@@ -16,7 +16,7 @@ class Employee(models.Model):
     
     name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-    phone_regex = RegexValidator(regex=r'^\+?91?\d{10}$', message="Mobile number should contain 10 digits")
+    phone_regex = RegexValidator(regex=r'^\+91+\d{10}$', message="Mobile number should contain 10 digits")
     phone = models.CharField(validators=[phone_regex], max_length=13, blank=True)
     salary = models.IntegerField(default=0)
     bonus = models.IntegerField(default=0)
